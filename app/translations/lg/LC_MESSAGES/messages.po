@@ -1,0 +1,260 @@
+# Ganda translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-03-27 09:01+0300\n"
+"PO-Revision-Date: 2019-03-27 07:19+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: lg\n"
+"Language-Team: lg <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: app/__init__.py:19
+msgid "Please log in to access this page."
+msgstr "Sooka oyingire okulaba Omuko guno bambi."
+
+#: app/auth/email.py:8
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] Kyusa Pasiwadiyo"
+
+#: app/auth/forms.py:10 app/auth/forms.py:17 app/main/forms.py:11
+msgid "Username"
+msgstr "Erinnya"
+
+#: app/auth/forms.py:11 app/auth/forms.py:20 app/auth/forms.py:44
+msgid "Password"
+msgstr "Pasiwadi"
+
+#: app/auth/forms.py:12
+msgid "Remember Me"
+msgstr "Nzijukira"
+
+#: app/auth/forms.py:13 app/auth/routes.py:32 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Yingira"
+
+#: app/auth/forms.py:18 app/auth/forms.py:39
+msgid "Email"
+msgstr "Emeyilo"
+
+#: app/auth/forms.py:21 app/auth/forms.py:45
+msgid "Repeat Password"
+msgstr "Ddamu Pasiwadi"
+
+#: app/auth/forms.py:24 app/auth/routes.py:55
+#: app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Weewandiise"
+
+#: app/auth/forms.py:30 app/main/forms.py:24
+msgid "Please use a different username."
+msgstr "Kozesa erinnya eddala"
+
+#: app/auth/forms.py:35
+msgid "Please use a different email address."
+msgstr "Kozesa emeyilo endala bambi."
+
+#: app/auth/forms.py:40
+msgid "Request Password Reset"
+msgstr "Saba okukyusa Pasiwadi"
+
+#: app/auth/forms.py:48 app/main/forms.py:13 app/main/forms.py:30
+msgid "Submit"
+msgstr "Waayo"
+
+#: app/auth/routes.py:25
+msgid "Invalid Username or Password"
+msgstr "Erinnya ly'okozesa or Pasiwadi bikyamu"
+
+#: app/auth/routes.py:53
+msgid "Congratulations, you are now a registered user!"
+msgstr "Kyassanyu nnyo, kati oli mutuuze!"
+
+#: app/auth/routes.py:68
+msgid "Check your email for the instructions to rest your password"
+msgstr "Kebera emeyilo yo ogoberera engeri jookyusaamu Pasiwadiyo"
+
+#: app/auth/routes.py:71 app/auth/routes.py:88
+#: app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Kyusa Pasiwadi"
+
+#: app/auth/routes.py:85
+msgid "Your password has been reset."
+msgstr "Pasiwadiyo ekyusiddwa."
+
+#: app/errors/handlers.py:9 app/errors/handlers.py:15
+msgid "Error"
+msgstr "Ekizibu"
+
+#: app/main/forms.py:12
+msgid "About me"
+msgstr "Ebinkwatako"
+
+#: app/main/forms.py:28
+msgid "Say Something"
+msgstr "Baako Kyoyogera"
+
+#: app/main/routes.py:34
+msgid "Your post is now live!"
+msgstr "Ky'owandiise kati kirabika!"
+
+#: app/main/routes.py:45
+msgid "Home Page"
+msgstr "Omuko gw'Ewaka"
+
+#: app/main/routes.py:61 app/templates/base.html:30
+msgid "Explore"
+msgstr "Yitamu"
+
+#: app/main/routes.py:90
+msgid "Your changes have been saved."
+msgstr "By'okyusizze biterekeddwa."
+
+#: app/main/routes.py:95
+msgid "Edit Profile"
+msgstr "Kyusa Ebikwatako"
+
+#: app/main/routes.py:104
+#, python-format
+msgid "User %(username)s not found."
+msgstr "Omutuuze %(username)s talabise"
+
+#: app/main/routes.py:107
+msgid "You cannot follow yourself!"
+msgstr "Tosobola kwegoberera!"
+
+#: app/main/routes.py:111
+#, python-format
+msgid "You are now following %(username)s!"
+msgstr "Kati ogoberera %(username)s!"
+
+#: app/main/routes.py:123
+msgid "You cannot unfollow yourself!"
+msgstr "Tosobola kulekera awo kwegoberera!"
+
+#: app/main/routes.py:127
+#, python-format
+msgid "You are not following %(username)s."
+msgstr "Kati tokyagoberera %(username)s."
+
+#: app/templates/_pagination.html:5
+msgid "Newer Posts"
+msgstr "Ebiwandiiko Ebipya"
+
+#: app/templates/_pagination.html:10
+msgid "Older Posts"
+msgstr "Ebiwandiiko Ebikadde"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s yagambye %(when)s"
+
+#: app/templates/base.html:18
+msgid "Toggle navigation"
+msgstr "Kyusa Entabula"
+
+#: app/templates/base.html:29
+msgid "Home"
+msgstr "Ewaka"
+
+#: app/templates/base.html:34
+msgid "Login"
+msgstr "Yingira"
+
+#: app/templates/base.html:38
+msgid "Profile"
+msgstr "Ebikwatako"
+
+#: app/templates/base.html:39
+msgid "Logout"
+msgstr "Fuluma"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Nkulamusizza, %(username)s!"
+
+#: app/templates/user.html:8
+#, python-format
+msgid "User: %(username)s"
+msgstr "Omutuuze: %(username)s"
+
+#: app/templates/user.html:11
+#, python-format
+msgid "Last Seen on: %(when)s"
+msgstr "Yakoma Kulabika nga: %(when)s"
+
+#: app/templates/user.html:14
+#, python-format
+msgid "%(followers)s followers,"
+msgstr "%(followers)s abagoberera,"
+
+#: app/templates/user.html:16
+#, python-format
+msgid "%(following)s following."
+msgstr "%(following)s bagoberera"
+
+#: app/templates/user.html:21
+msgid "Edit your Profile"
+msgstr "Kyusa Ebikwatako"
+
+#: app/templates/user.html:24
+msgid "Follow"
+msgstr "Goberera"
+
+#: app/templates/user.html:28
+msgid "Unfollow"
+msgstr "Lekera awo Okugoberera"
+
+#: app/templates/auth/login.html:15
+msgid "Forgot Your Password?"
+msgstr "Weelabidde Pasiwadiyo?"
+
+#: app/templates/auth/login.html:17
+msgid "Click to Reset It"
+msgstr "Nyiga wano Ogikyuse"
+
+#: app/templates/auth/login.html:20
+msgid "New User?"
+msgstr "Oli mutuuze mupya?"
+
+#: app/templates/auth/login.html:22
+msgid "Click to Register!"
+msgstr "Nyiga wano Weewandiise!"
+
+#: app/templates/auth/register.html:15
+msgid "Have an account?"
+msgstr "Weewandiisa dda?"
+
+#: app/templates/auth/register.html:17
+msgid "Click to Login!"
+msgstr "Nyiga wano oyingire!"
+
+#: app/templates/auth/reset_password.html:16
+#: app/templates/auth/reset_password_request.html:17
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Ddayo"
+
+#: app/templates/errors/404.html:4
+msgid "File Not Found"
+msgstr "Fiyilo Telabise"
+
+#: app/templates/errors/500.html:5
+msgid "The administration has been notified. Sorry for the inconveniences!"
+msgstr "Abakulu bategeezeddwa. Twetonda kulw'okutaataganyizibwa!"
+
+#~ msgid "Hi"
+#~ msgstr "Nkulamusizza"
+
