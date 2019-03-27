@@ -1,5 +1,6 @@
 import os
 import logging
+
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask import Flask, request, current_app
 from config import Config
@@ -11,6 +12,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _l
+
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -83,7 +85,6 @@ def create_app(config_class=Config):
         app.logger.info('Microblog startup')
 
     return app
-
 
 
 @babel.localeselector
