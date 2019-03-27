@@ -63,6 +63,8 @@ def create_app(config_class=Config):
                 mail_handler.setLevel(logging.ERROR)
                 app.logger.addHandler(mail_handler)
 
+        fmt = logging.Formatter(
+            '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
         if app.config['LOG_TO_STDOUT']:
             stream_handler = logging.StreamHandler()
             stream_handler.setLevel(logging.INFO)
