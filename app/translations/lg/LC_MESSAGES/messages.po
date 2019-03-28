@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-03-27 09:01+0300\n"
+"POT-Creation-Date: 2019-03-28 11:52+0300\n"
 "PO-Revision-Date: 2019-03-27 07:19+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: lg\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: app/__init__.py:19
+#: app/__init__.py:21
 msgid "Please log in to access this page."
 msgstr "Sooka oyingire okulaba Omuko guno bambi."
 
@@ -30,7 +30,7 @@ msgstr "[Microblog] Kyusa Pasiwadiyo"
 msgid "Username"
 msgstr "Erinnya"
 
-#: app/auth/forms.py:11 app/auth/forms.py:20 app/auth/forms.py:44
+#: app/auth/forms.py:11 app/auth/forms.py:21 app/auth/forms.py:47
 msgid "Password"
 msgstr "Pasiwadi"
 
@@ -42,32 +42,33 @@ msgstr "Nzijukira"
 msgid "Sign In"
 msgstr "Yingira"
 
-#: app/auth/forms.py:18 app/auth/forms.py:39
+#: app/auth/forms.py:19 app/auth/forms.py:42
 msgid "Email"
 msgstr "Emeyilo"
 
-#: app/auth/forms.py:21 app/auth/forms.py:45
+#: app/auth/forms.py:24 app/auth/forms.py:48
 msgid "Repeat Password"
 msgstr "Ddamu Pasiwadi"
 
-#: app/auth/forms.py:24 app/auth/routes.py:55
+#: app/auth/forms.py:27 app/auth/routes.py:55
 #: app/templates/auth/register.html:5
 msgid "Register"
 msgstr "Weewandiise"
 
-#: app/auth/forms.py:30 app/main/forms.py:24
+#: app/auth/forms.py:33 app/main/forms.py:24
 msgid "Please use a different username."
 msgstr "Kozesa erinnya eddala"
 
-#: app/auth/forms.py:35
+#: app/auth/forms.py:38
 msgid "Please use a different email address."
 msgstr "Kozesa emeyilo endala bambi."
 
-#: app/auth/forms.py:40
+#: app/auth/forms.py:43
 msgid "Request Password Reset"
 msgstr "Saba okukyusa Pasiwadi"
 
-#: app/auth/forms.py:48 app/main/forms.py:13 app/main/forms.py:30
+#: app/auth/forms.py:51 app/main/forms.py:13 app/main/forms.py:30
+#: app/main/forms.py:36
 msgid "Submit"
 msgstr "Waayo"
 
@@ -104,6 +105,10 @@ msgstr "Ebinkwatako"
 msgid "Say Something"
 msgstr "Baako Kyoyogera"
 
+#: app/main/forms.py:34
+msgid "Message"
+msgstr "Obubaka"
+
 #: app/main/routes.py:34
 msgid "Your post is now live!"
 msgstr "Ky'owandiise kati kirabika!"
@@ -112,50 +117,58 @@ msgstr "Ky'owandiise kati kirabika!"
 msgid "Home Page"
 msgstr "Omuko gw'Ewaka"
 
-#: app/main/routes.py:61 app/templates/base.html:30
+#: app/main/routes.py:61 app/templates/base.html:32
 msgid "Explore"
 msgstr "Yitamu"
 
-#: app/main/routes.py:90
+#: app/main/routes.py:97
 msgid "Your changes have been saved."
 msgstr "By'okyusizze biterekeddwa."
 
-#: app/main/routes.py:95
+#: app/main/routes.py:102
 msgid "Edit Profile"
 msgstr "Kyusa Ebikwatako"
 
-#: app/main/routes.py:104
+#: app/main/routes.py:111
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Omutuuze %(username)s talabise"
 
-#: app/main/routes.py:107
+#: app/main/routes.py:114
 msgid "You cannot follow yourself!"
 msgstr "Tosobola kwegoberera!"
 
-#: app/main/routes.py:111
+#: app/main/routes.py:118
 #, python-format
 msgid "You are now following %(username)s!"
 msgstr "Kati ogoberera %(username)s!"
 
-#: app/main/routes.py:123
+#: app/main/routes.py:130
 msgid "You cannot unfollow yourself!"
 msgstr "Tosobola kulekera awo kwegoberera!"
 
-#: app/main/routes.py:127
+#: app/main/routes.py:134
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Kati tokyagoberera %(username)s."
 
+#: app/main/routes.py:148
+msgid "Your message has been sent."
+msgstr "Obubaka bwo busindiddwa"
+
+#: app/main/routes.py:150
+msgid "Send Message"
+msgstr "Sindika Obubaka"
+
 #: app/templates/_pagination.html:5
-msgid "Newer Posts"
-msgstr "Ebiwandiiko Ebipya"
+msgid "Newer"
+msgstr "Ekipya"
 
 #: app/templates/_pagination.html:10
-msgid "Older Posts"
-msgstr "Ebiwandiiko Ebikadde"
+msgid "Older"
+msgstr "Ekiadde"
 
-#: app/templates/_post.html:14
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s yagambye %(when)s"
@@ -164,19 +177,23 @@ msgstr "%(username)s yagambye %(when)s"
 msgid "Toggle navigation"
 msgstr "Kyusa Entabula"
 
-#: app/templates/base.html:29
+#: app/templates/base.html:30
 msgid "Home"
 msgstr "Ewaka"
 
-#: app/templates/base.html:34
+#: app/templates/base.html:37
 msgid "Login"
 msgstr "Yingira"
 
-#: app/templates/base.html:38
+#: app/templates/base.html:40
+msgid "Messages"
+msgstr "Obubaka"
+
+#: app/templates/base.html:42
 msgid "Profile"
 msgstr "Ebikwatako"
 
-#: app/templates/base.html:39
+#: app/templates/base.html:44
 msgid "Logout"
 msgstr "Fuluma"
 
@@ -184,6 +201,11 @@ msgstr "Fuluma"
 #, python-format
 msgid "Hi, %(username)s!"
 msgstr "Nkulamusizza, %(username)s!"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr "Sindika Obubaka eri %(recipient)s"
 
 #: app/templates/user.html:8
 #, python-format
@@ -209,13 +231,31 @@ msgstr "%(following)s bagoberera"
 msgid "Edit your Profile"
 msgstr "Kyusa Ebikwatako"
 
-#: app/templates/user.html:24
+#: app/templates/user.html:24 app/templates/user_popup.html:24
 msgid "Follow"
 msgstr "Goberera"
 
-#: app/templates/user.html:28
+#: app/templates/user.html:28 app/templates/user_popup.html:27
 msgid "Unfollow"
 msgstr "Lekera awo Okugoberera"
+
+#: app/templates/user.html:33
+msgid "Send private message"
+msgstr "Sindika Obubaka obw'ekyama"
+
+#: app/templates/user_popup.html:15
+msgid "Last Seen on"
+msgstr "Yasembye kulabika ko nga"
+
+#: app/templates/user_popup.html:18
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d abagoberera"
+
+#: app/templates/user_popup.html:19
+#, python-format
+msgid "%(count)d following"
+msgstr "%(count)d bagoberera"
 
 #: app/templates/auth/login.html:15
 msgid "Forgot Your Password?"
@@ -258,3 +298,8 @@ msgstr "Abakulu bategeezeddwa. Twetonda kulw'okutaataganyizibwa!"
 #~ msgid "Hi"
 #~ msgstr "Nkulamusizza"
 
+#~ msgid "Newer Posts"
+#~ msgstr "Ebiwandiiko Ebipya"
+
+#~ msgid "Older Posts"
+#~ msgstr "Ebiwandiiko Ebikadde"
