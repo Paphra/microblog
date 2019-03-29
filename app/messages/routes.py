@@ -15,7 +15,7 @@ def send_message(recipient):
     user = User.query.filter_by(username=recipient).first_or_404()
     form = MessageForm()
     if form.validate_on_submit():
-        msg = Message(author=current_user, recipient=user,
+        msg = Message(sender=current_user, recipient=user,
                       body=form.message.data)
         db.session.add(msg)
         user.add_notification('unread_message_count', user.new_messages())
@@ -42,18 +42,16 @@ def messages():
         Message.timestamp.desc()).paginate(
             page, pagination, False)
 
-    authors = []
-    recipients = []
+    pair = []
     messages = []
     for message in msg_pg.items:
-        author = message.author.username
+        sender = message.sender.username
         recipient = message.recipient.username
-        if author not in authors and author not in recipients:
-            authors.append(author)
-            recipients.append(recipient)
+
+        users = {'sender': sender, 'recipient': recipient}
+        if users not in pair:
             messages.append(message)
-        elif author not in authors and recipient not in recipients:
-            messages.append(message)
+            pair.append(pair)
 
     next_url = None
     prev_url = None
@@ -75,7 +73,7 @@ def user_messages(username):
     user = User.query.filter_by(username=username).first_or_404()
 
     if form.validate_on_submit():
-        msg = Message(author=current_user, recipient=user,
+        msg = Message(sender=current_user, recipient=user,
                         body=form.reply.data)
         db.session.add(msg)
         user.add_notification('unread_message_count', user.new_messages())
@@ -84,7 +82,7 @@ def user_messages(username):
 
     page = request.args.get('page', 1, type=int)
 
-    messages_received = current_user.messages_received.filter_by(author=user)
+    messages_received = current_user.messages_received.filter_by(sender=user)
     messages_sent = current_user.messages_sent.filter_by(recipient=user)
 
     messages = messages_received.union(messages_sent).order_by(

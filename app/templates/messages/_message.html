@@ -1,18 +1,18 @@
 <table class="table table-hover">
     <tr>
         <td width="70px">
-            <a href="{{ url_for('main.user', username=message.author.username) }}">
-                <img src="{{ message.author.avatar(70) }}" alt="">
+            <a href="{{ url_for('main.user', username=message.sender.username) }}">
+                <img src="{{ message.sender.avatar(70) }}" alt="">
             </a>
         </td>
         <td>
             {% set sender_link %}
                 <span class="user_popup">
-                    <a href="{{ url_for('main.user', username=message.author.username) }}">
-                        {% if message.author == current_user %}
+                    <a href="{{ url_for('main.user', username=message.sender.username) }}">
+                        {% if message.sender == current_user %}
                             {{ _('You') }}
                         {% else %}
-                            {{ message.author.username }}
+                            {{ message.sender.username }}
                         {% endif %}
                     </a>
                 </span>
@@ -36,13 +36,13 @@
                 {% if message.status %}Seen{% else %}Unread{% endif %}
             {% endset %}
             {{ _('Status: %(status)s', status=status) }}
-            {% if current_user == message.author %}
+            {% if current_user == message.sender %}
                 <a href="{{ url_for('messages.user_messages',
                             username=message.recipient.username) }}">
                     {{ _('Conversation') }}</a>
             {% else %}
                 <a href="{{ url_for('messages.user_messages',
-                            username=message.author.username) }}">
+                            username=message.sender.username) }}">
                     {{ _('Conversation') }}</a>
             {% endif %}
         </td>

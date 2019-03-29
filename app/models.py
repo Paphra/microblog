@@ -22,12 +22,6 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
-'''chats = db.Table(
-    'chats',
-    db.Column('sender_id', db.Integer, db.ForeignKey('messase.sender_id')),
-    db.Column('recipient_id', db.Integer, db.ForeignKey('messase.recipient_id'))
-)'''
-
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -40,7 +34,7 @@ class User(UserMixin, db.Model):
 
     messages_sent = db.relationship('Message',
                                     foreign_keys='Message.sender_id',
-                                    backref='author',
+                                    backref='sender',
                                     lazy='dynamic')
     messages_received = db.relationship('Message',
                                         foreign_keys='Message.recipient_id',
