@@ -22,6 +22,12 @@ followers = db.Table(
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+'''chats = db.Table(
+    'chats',
+    db.Column('sender_id', db.Integer, db.ForeignKey('messase.sender_id')),
+    db.Column('recipient_id', db.Integer, db.ForeignKey('messase.recipient_id'))
+)'''
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -132,9 +138,13 @@ class Message(db.Model):
     recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    status = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return '<Message {}>'.format(self.body)
+
+    def set_status(self, status):
+        self.status = status
 
 
 class Notification(db.Model):

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    {% set user_link %}
+        <span class="user_popup">
+            <a href="{{ url_for('main.user', username=user.username) }}">
+                {{ user.username }}
+            </a>
+        </span>
+    {% endset %}
+
+    <h4>{{ _('Conversation with %(username)s', username=user_link) }}</h4>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <hr>
+    {% for message in messages %}
+        {% include 'messages/_user_message.html' %}
+    {% endfor %}
+
+    {% include "_pagination.html" %}
+{% endblock %}

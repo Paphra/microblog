@@ -2,8 +2,8 @@
 
 {% block app_content %}
     <h1>{{ _('Messages') }}</h1>
-    {% for post in messages %}
-        {% include '_post.html' %}
+    {% for message in messages %}
+        {% include 'messages/_message.html' %}
     {% endfor %}
 
     {% include "_pagination.html" %}
