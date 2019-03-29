@@ -90,7 +90,8 @@ def user_messages(username):
             page, current_app.config['MESSAGES_PER_PAGE'], False)
 
     for m in messages.items:
-        m.set_status(1)
+        if m.recipient == current_user:
+            m.set_status(1)
     db.session.commit()
 
     next_url = url_for('messages.user_messages', username=username,
