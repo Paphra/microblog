@@ -43,13 +43,15 @@ def messages():
             page, pagination, False)
 
     pair = []
+    recipients = []
+    senders = []
     messages = []
     for message in msg_pg.items:
         sender = message.sender.username
         recipient = message.recipient.username
 
-        users = {'sender': sender, 'recipient': recipient}
-        if users not in pair:
+        users = [sender, recipient]
+        if sender not in senders and users not in pair:
             messages.append(message)
             pair.append(pair)
 
