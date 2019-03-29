@@ -52,7 +52,7 @@ def messages():
 
         users = [sender, recipient]
         sorted(users)
-        if sender not in senders and users not in pair:
+        if users not in pair:
             messages.append(message)
             pair.append(users)
 
