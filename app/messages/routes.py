@@ -37,9 +37,10 @@ def messages():
     messages_received = current_user.messages_received
     messages_sent = current_user.messages_sent
 
+    pagination = current_app.config['MESSAGES_PER_PAGE']
     msg_pg = messages_received.union(messages_sent).order_by(
         Message.timestamp.desc()).paginate(
-            page, current_app.config['POSTS_PER_PAGE'], False)
+            page, pagination, False)
 
     authors = []
     recipients = []
@@ -52,10 +53,13 @@ def messages():
             recipients.append(recipient)
             messages.append(message)
 
-    next_url = url_for('messages.messages',
-                       page=msg_pg.next_num) if msg_pg.has_next else None
-    prev_url = url_for('messages.messages',
-                       page=msg_pg.prev_num) if msg_pg.has_prev else None
+    next_url = None
+    prev_url = None
+
+    if msg_pg.next_num and len(messages) > pagination:
+        next_url = url_for('messages.messages', page=msg_pg.next_num)
+    if msg_pg.prev_num and len(messages) > pagination:
+        prev_url = url_for('messages.messages', page=msg_pg.prev_num)
 
     return render_template('messages/messages.html', messages=messages,
                            next_url=next_url, prev_url=prev_url,
@@ -83,7 +87,7 @@ def user_messages(username):
 
     messages = messages_received.union(messages_sent).order_by(
         Message.timestamp.desc()).paginate(
-            page, current_app.config['POSTS_PER_PAGE'], False)
+            page, current_app.config['MESSAGES_PER_PAGE'], False)
 
     for m in messages.items:
         m.set_status(1)

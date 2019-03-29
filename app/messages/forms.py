@@ -10,6 +10,6 @@ class MessageForm(FlaskForm):
 
 
 class MessageReplyForm(FlaskForm):
-    reply = TextAreaField(_l('Reply'), validators=[DataRequired(),
+    reply = TextAreaField(_l('Send Message'), validators=[DataRequired(),
                                                    Length(min=0, max=140)])
     send = SubmitField(_l('Send'))

@@ -9,7 +9,11 @@
             {% set user_link %}
                 <span class="user_popup">
                     <a href="{{ url_for('main.user', username=post.author.username) }}">
-                        {{ post.author.username }}
+                        {% if post.author == current_user %}
+                            {{ _('You') }}
+                        {% else %}
+                            {{ post.author.username }}
+                        {% endif %}
                     </a>
                 </span>
             {% endset %}

@@ -21,7 +21,8 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['paphra.me@gmail.com']
 
-    POSTS_PER_PAGE = 5
+    POSTS_PER_PAGE = 25
+    MESSAGES_PER_PAGE = 10
 
     LANGUAGES = ['en', 'es', 'lg']
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
