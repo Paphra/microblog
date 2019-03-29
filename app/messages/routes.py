@@ -58,7 +58,8 @@ def messages():
                        page=msg_pg.prev_num) if msg_pg.has_prev else None
 
     return render_template('messages/messages.html', messages=messages,
-                           next_url=next_url, prev_url=prev_url)
+                           next_url=next_url, prev_url=prev_url,
+                           title=_('Messages'))
 
 @bp.route('/user_messages/<username>', methods=['GET', 'POST'])
 @login_required
@@ -95,7 +96,7 @@ def user_messages(username):
 
     return render_template('messages/user_messages.html', messages=messages.items,
                            next_url=next_url, prev_url=prev_url, user=user,
-                           form=form)
+                           form=form, title=_('User Messages'))
 
 @bp.route('/notifications')
 @login_required

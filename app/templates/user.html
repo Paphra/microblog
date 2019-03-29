@@ -5,7 +5,7 @@
         <tr valign="top">
             <td><img src="{{ user.avatar(128) }}" alt=""></td>
             <td>
-                <h1>{{ _('User: %(username)s', username=user.username) }}</h1>
+                <h3 class="" style="text-align: center;">{{ _('User: %(username)s', username=user.username) }}</h3>
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
                 {% if user.last_seen %}
                     <p>{{ _('Last Seen on: %(when)s',

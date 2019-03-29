@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <h1>{{ ('An unexpected error has occurred') }}</h1>
+    <h3 style="text-align: center;">
+        {{ ('An unexpected error has occurred') }}</h3>
     <p>{{ _('The administration has been notified. Sorry for the inconveniences!') }}</p>
     <p><a href="{{ url_for('main.index') }}">{{ _('Back') }}</a></p>
 {% endblock %}

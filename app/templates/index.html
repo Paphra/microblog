@@ -2,7 +2,8 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+    <h3 style="text-align: center;">
+        {{ _('Hi, %(username)s!', username=current_user.username) }}</h3>
 
     {% if form %}
     <div class="row">
