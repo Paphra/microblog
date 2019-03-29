@@ -52,7 +52,7 @@ def messages():
             authors.append(author)
             recipients.append(recipient)
             messages.append(message)
-        elif author in recipients and not message.status:
+        elif author in recipients and recipient not in recipients:
             messages.append(message)
 
     next_url = None
