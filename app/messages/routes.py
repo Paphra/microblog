@@ -51,7 +51,8 @@ def messages():
         recipient = message.recipient.username
 
         users = [sender, recipient]
-        sorted(users)
+        users.sort()
+        print(users)
         if users not in pair:
             messages.append(message)
             pair.append(users)
