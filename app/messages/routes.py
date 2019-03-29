@@ -52,6 +52,8 @@ def messages():
             authors.append(author)
             recipients.append(recipient)
             messages.append(message)
+        elif author in recipients and not message.status:
+            messages.append(message)
 
     next_url = None
     prev_url = None
