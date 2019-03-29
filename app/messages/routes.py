@@ -53,7 +53,7 @@ def messages():
         users = [sender, recipient]
         if sender not in senders and users not in pair:
             messages.append(message)
-            pair.append(pair)
+            pair.append(users)
 
     next_url = None
     prev_url = None
