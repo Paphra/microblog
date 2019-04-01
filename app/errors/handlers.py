@@ -1,15 +1,23 @@
-from flask import render_template
+from flask import render_template, request
 from app.errors import bp
 from app import db
 from flask_babel import _
+from app.api.v1.errors import error_response as api_v1_error_response
 
+
+def wants_json_respnse():
+    return request.accept_mimetypes['application/json'] >= \
+        request.accept_mimetypes['text/html']
 
 @bp.app_errorhandler(404)
 def not_found_error(error):
-    render_template('errors/404.html', title=_("Error")), 404
-
+    if wants_json_respnse():
+        return api_v1_error_response(404)
+    return render_template('errors/404.html', title=_("Error")), 404
 
 @bp.app_errorhandler(500)
 def internal_error(error):
     db.session.rollback()
+    if wants_json_respnse():
+        return api_v1_error_response(500)
     return render_template('errors/500.html', title=_("Error")), 500
